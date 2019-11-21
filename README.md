@@ -1,0 +1,1 @@
+This repository is dedicated to the training course by HTML5 and CSS3. At the GeekBrains platform.
