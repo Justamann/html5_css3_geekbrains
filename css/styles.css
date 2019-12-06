@@ -126,6 +126,9 @@ body {
   display: block;
   padding: 0 23px 0 9px;
 }
+.dignity-item p {
+  margin: 0 10px 0 10px;
+}
 .dignity-item-title::-webkit-details-marker {
   display: none;
 }
@@ -148,14 +151,17 @@ body {
 details[open] summary:before {
   content: "-";
 }
-
 .screenshots{
   width: 100%;
   min-height: 487px;
   padding: 50px;
   box-sizing: border-box;
 }
-
+.screenshots:after {
+  content:"";
+  display: block;
+  clear:both;
+}
 .screenshots-title {
   width: 100%;
   margin: 0 0 35px 0;
@@ -178,6 +184,10 @@ details[open] summary:before {
 .screenshots-item:nth-child(5) {
   float: right;
 }
+figure:nth-child(4),
+figure:nth-child(5) {
+margin-bottom: 0;
+}
 
 .screenshot-img {
   display: block;
@@ -191,7 +201,6 @@ details[open] summary:before {
 .screenshots-item-desc {
   margin: 0;
 }
-
 .screenshots-item-title {
   margin: 0 0 15px 0;
   color: #445161;
@@ -200,8 +209,6 @@ details[open] summary:before {
   font-size: 24px;
   font-weight: 400;
 }
-
-
 .screenshots-item-txt {
   margin: 0;
   color: #333333;
@@ -219,6 +226,7 @@ details[open] summary:before {
   align-content: flex-start;
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
 }
 .reviews-title {
@@ -231,16 +239,16 @@ details[open] summary:before {
   line-height: 36px;
 }
 .reviews-item {
-  width: 577px;
+  width: 529px;
+  box-sizing: border-box;
 }
-.reviews-item:nth-child(3) {
-  padding-right: 26px;
-}
+
 .reviews-item-column2 {
-  padding-left: 26px;
+  margin-left: 78px;
 }
 .txt {
-  width: 483px;
+  width: 469px;
+  min-height: 121px;
   padding: 10px;
   box-sizing: border-box;
   background-color: #ccc;
@@ -282,6 +290,7 @@ details[open] summary:before {
 }
 .buy {
   width: 100%;
+  padding: 50px;
   display: flex;
   color: white;
   flex-wrap: wrap;
@@ -431,6 +440,7 @@ details[open] summary:before {
   justify-content: center;
   width: 1280px;
   padding: 50px;
+  box-sizing: border-box;
   background-color: #445161;
 }
 
@@ -539,26 +549,46 @@ textarea[placeholder] {
 .footer-address {
   font-style: inherit;
 }
-.footer-contacts-list{
-  margin: 0;
-  padding: 0;
-  list-style-position: outside;
-  list-style-type: none;
-}
+/*.footer-contacts-list{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  list-style-position: outside;*/
+/*  list-style-type: none;*/
+/*}*/
 .footer-contacts-list-item {
-  padding: 0 0 29px 30px;
+  padding: 0 0 20px 30px;
+  display: block;
+  position: relative;
 }
-.footer-contacts-list li:nth-child(1) {
-  background: url("../img/icons/skype_icon.png") no-repeat;
+.footer-contacts-list-item:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
-.footer-contacts-list li:nth-child(2) {
-  background: url("../img/icons/icq_icon.png") no-repeat;
+.icon-skype:before {
+  content: '';
+  background-image: url("../img/icons/skype_icon.png");
+
 }
-.footer-contacts-list li:nth-child(3) {
-  background: url("../img/icons/email_icon.png") no-repeat;
+.icon-icq:before {
+  content: '';
+  background-image: url("../img/icons/icq_icon.png");
 }
-.footer-contacts-list li:nth-child(4) {
-  background: url("../img/icons/phone_icon.png") no-repeat;
+.icon-email:before {
+  content: '';
+  background-image: url("../img/icons/email_icon.png");
+}
+.icon-phone:before {
+  content: '';
+  background-image: url("../img/icons/phone_icon.png");
 }
 
 .social-icons {
